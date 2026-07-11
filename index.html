@@ -128,7 +128,7 @@
     color:#fff;border:none;animation:gradShift 9s linear infinite}
   .btn-primary:hover{box-shadow:0 12px 34px -10px var(--g2)}
 
-  .hero-media{position:relative;display:flex;justify-content:center}
+  .hero-media{position:relative;display:flex;justify-content:flex-start}
   .photo-frame{position:relative;width:min(320px,80%);aspect-ratio:4/5;border-radius:22px;overflow:hidden;
     background:var(--surface-2);border:1px solid var(--line);box-shadow:0 30px 60px -30px var(--shadow)}
   .photo-frame::after{content:"";position:absolute;inset:0;border-radius:22px;padding:1.5px;
@@ -140,7 +140,7 @@
   .photo-ph svg{width:56px;height:56px;opacity:.5}
   .photo-ph span{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em}
 
-  .cat{position:absolute;bottom:-6px;right:6%;width:82px;height:82px;z-index:3}
+  .cat{position:absolute;bottom:-6px;right:0;width:88px;height:88px;z-index:3}
   .cat .tail{transform-origin:14px 74px;animation:swish 3.4s ease-in-out infinite}
   @keyframes swish{0%,100%{transform:rotate(0deg)}50%{transform:rotate(-22deg)}}
   .cat .eye{transform-origin:center;animation:blink 5s infinite}
@@ -275,8 +275,18 @@
   .reveal.is-visible{opacity:1;transform:none}
 
   @media(max-width:860px){
+    /* mobile: blend with spacing, not bubbles */
+    .section{padding:64px 0}
+    .hero{padding:56px 0 32px}
+    .job{border:1px solid var(--line);border-radius:14px;background:var(--surface);padding:16px 16px 18px;margin-bottom:14px}
+    .job:last-child{margin-bottom:0}
+    .job::before{display:none}
+    .timeline{padding-left:0}
+    .timeline::before{display:none}
     .hero-grid{grid-template-columns:1fr;gap:20px}
     .hero-media{order:-1;margin-bottom:8px}
+    .photo-frame{width:min(300px,74%)}
+    .cat{width:66px;height:66px;right:2px}
     .about-grid{grid-template-columns:1fr;gap:26px}
     .proj-grid,.duo,.skill-grid{grid-template-columns:1fr}
     .stats{grid-template-columns:1fr 1fr 1fr}
